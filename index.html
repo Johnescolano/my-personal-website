@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    HEAD SECTION
+    Purpose: Set up metadata, fonts, page title, and connect CSS.
+    Use: Everything here affects how the page loads + looks.
+  -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>John Escolano</title>
+
+  <!--
+    GOOGLE FONTS
+    Purpose: Load Playfair Display (headings) + Inter (body text).
+    Use: Gives the site a clean modern portfolio look.
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!--
+    MAIN CSS
+    Purpose: Loads all styling for layout, colors, typography, carousel, etc.
+    Use: Put main stylesheet in /assets/styles.css
+  -->
+  <link rel="stylesheet" href="./assets/styles.css" />
+</head>
+
+<body>
+
+  <!--
+    HEADER / NAVIGATION
+    Purpose: Provide links to sections (Home/About/Resume/Contact) and socials.
+    Use: Clicking a link scrolls smoothly to that section (#top, #about-me, etc).
+  -->
+  <header class="site-header">
+    <div class="nav-wrap">
+      <nav class="site-nav" aria-label="Primary navigation">
+        <ul>
+          <li><a href="#top">Home</a></li>
+          <li><a href="#about-me">About</a></li>
+          <li><a href="#resume">Resume</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!--
+    HERO SECTION (TOP)
+    Purpose: First impression section. Introduces who you are + quick actions.
+    Use: Left side = intro text + buttons. Right side = photo.
+  -->
+  <section id="top" class="hero">
+
+    <!--
+      HERO INNER LAYOUT
+      Purpose: Two-column layout on desktop (text + image).
+      Use: Becomes stacked on mobile via CSS media queries.
+    -->
+    <div class="hero-inner">
+
+      <!--
+        HERO LEFT PANEL
+        Purpose: headline, short bio, and CTA buttons.
+        Use: Edit text here when you want to update intro.
+      -->
+      <div class="hero-left">
+        <h1 class="hero-title">Hello!</h1>
+        <h2 class="hero-name">I’m John Escolano</h2>
+
+        <p class="hero-lead">
+          I’m a junior software developer focused on building clean, modern, and user-friendly digital experiences
+          while continuously improving my skills in web development and programming.
+        </p>
+
+        <p class="hero-lead">
+          With a strong passion for technology, I’m on a dedicated learning journey toward becoming a full-stack developer
+          through hands-on projects and thoughtful design.
+        </p>
+
+        <!--
+          HERO BUTTONS (CTA)
+          Purpose: Provide quick actions for recruiters/visitors.
+          Use:
+            - Email me -> opens the visitor's email client
+            - Download Resume -> opens your PDF in a new tab
+        -->
+        <div class="hero-actions">
+          <a class="btn primary" href="mailto:escolanojrjohn@gmail.com">Email me</a>
+          <a class="btn ghost" href="./assets/Resume.pdf" target="_blank" rel="noopener">Download Resume</a>
+        </div>
+      </div>
+
+      <!--
+        HERO RIGHT PANEL (PHOTO)
+        Purpose: Show professional photo beside the intro.
+      -->
+      <div class="hero-right">
+        <img src="./assets/john.jpeg" alt="John Escolano" class="hero-img" />
+      </div>
+
+    </div>
+
+    <!--
+      SKILLS TITLE
+      Purpose: Label the carousel section in a modern way.
+      Use: Change text if want another title later.
+    -->
+    <div class="skills-header" aria-hidden="true">
+      <h3 class="skills-title">What I Work With</h3>
+    </div>
+
+    <!--
+      SKILLS CAROUSEL
+      Purpose: Showcase tech stack in a clean interactive strip.
+      Use: Logos come from /assets/logos folder.
+      Accessibility:
+        - Buttons have aria-label
+        - Viewport is keyboard-focusable (arrow keys)
+    -->
+    <div class="skills-carousel" aria-label="Skills carousel">
+      <button class="sc-btn sc-prev" type="button" aria-label="Previous skill">‹</button>
+
+      <div class="sc-viewport" tabindex="0" aria-label="Carousel viewport">
+        <div class="sc-track">
+
+          <!-- Each slide = Logo + name. Tooltip comes from title attribute -->
+          <div class="sc-slide" title="HTML">
+            <img src="./assets/logos/html5.svg" alt="HTML" loading="lazy">
+            <span>HTML</span>
+          </div>
+
+          <div class="sc-slide" title="CSS">
+            <img src="./assets/logos/css.svg" alt="CSS" loading="lazy">
+            <span>CSS</span>
+          </div>
+
+          <div class="sc-slide" title="JavaScript">
+            <img src="./assets/logos/javascript.svg" alt="JavaScript" loading="lazy">
+            <span>JavaScript</span>
+          </div>
+
+          <div class="sc-slide" title="Git">
+            <img src="./assets/logos/git.svg" alt="Git" loading="lazy">
+            <span>Git</span>
+          </div>
+
+          <div class="sc-slide" title="GitHub">
+            <img src="./assets/logos/github.svg" alt="GitHub" loading="lazy">
+            <span>GitHub</span>
+          </div>
+
+          <div class="sc-slide" title="Node.js">
+            <img src="./assets/logos/nodedotjs.svg" alt="Node.js" loading="lazy">
+            <span>Node.js</span>
+          </div>
+
+        </div>
+      </div>
+
+      <button class="sc-btn sc-next" type="button" aria-label="Next skill">›</button>
+
+      <!-- Dots are created by JS auto -->
+      <div class="sc-dots" aria-label="Carousel dots"></div>
+    </div>
+
+  </section>
+
+  <!--
+    ABOUT SECTION
+    Purpose: Tell a longer story about your background and direction.
+    Use: can expand this with projects, goals, and strengths.
+  -->
+  <section id="about-me" class="content-box">
+    <h2>About Me</h2>
+    <p>
+      I’m <strong>John Escolano</strong>, a passionate creator with a diverse background that connects
+      hospitality, music, and technology. I spent 15 years in Hong Kong, where I refined my communication skills,
+      creativity, and adaptability while working in dynamic bars and restaurants as a bartender and performing as a DJ.
+      These experiences taught me how to engage with people, build meaningful connections, and bring energy into
+      everything I do.
+    </p>
+
+    <p>
+      When I moved to Canada in 2018, I entered a new chapter of growth. I worked in various roles while adapting to a
+      new country and building new skills. During this time, I completed a Network and IT program, which helped me step
+      into the tech industry. I began working as a Desktop Support Technician.
+    </p>
+
+    <p>
+      Today, I work at a logistics company, continuing to grow my technical abilities and learning more about modern
+      systems and workflow optimization. Alongside my career, I am expanding my passion for software development by
+      building modern, user-focused web projects.
+    </p>
+
+    <p>
+      Welcome to my space — where creativity meets technology, and every project reflects the unique blend of
+      experience, artistry, and innovation that defines who I am.
+    </p>
+  </section>
+
+  <!--
+    RESUME SECTION
+    Purpose: Embed your PDF resume inside the page.
+    Use: The file should be at /assets/Resume.pdf (case sensitive on GitHub Pages).
+  -->
+  <section id="resume" class="content-box">
+    <h2>Resume</h2>
+    <div class="resume-wrapper">
+      <embed src="./assets/Resume.pdf" type="application/pdf" width="100%" height="800px">
+    </div>
+  </section>
+
+  <!--
+    CONTACT SECTION
+    Purpose: Simple contact info for recruiters or clients.
+    Use: Add a contact form later if.
+  -->
+  <section id="contact" class="content-box">
+    <h2>Contact</h2>
+    <p><strong>Email:</strong> escolanojrjohn@gmail.com</p>
+    <p><strong>Phone:</strong> 778-791-7202</p>
+  </section>
+
+  <!--
+    FOOTER
+    Purpose: Closing area with copyright.
+    Use: Add links to GitHub/portfolio or location.
+  -->
+  <footer>
+    <p>© 2025 John Escolano — All rights reserved.</p>
+  </footer>
+
+  <!--
+    BACK TO TOP BUTTON
+    Purpose: Quick scroll back to top.
+    Use: JS shows it only after scroll down.
+  -->
+  <button id="toTop" aria-label="Back to top">↑</button>
+
+  <!--
+    MAIN JAVASCRIPT
+    Purpose: Controls carousel + back-to-top button.
+    Use: Keep this at the end so the DOM exists when JS runs.
+  -->
+  <script src="./assets/script.js"></script>
+</body>
+</html>
